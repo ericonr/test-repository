@@ -3,7 +3,7 @@ name: Deploy Doxygen site to Pages
 on:
   push:
     branches:
-      - master
+      - main
 
   workflow_dispatch:
 
@@ -19,6 +19,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: debian:12
     steps:
       - uses: actions/checkout@v4
       - name: Install Doxygen
