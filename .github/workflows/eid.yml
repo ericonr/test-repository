@@ -14,6 +14,7 @@ jobs:
     env:
       REGISTRY: ghcr.io/${{ github.repository_owner }}
       SOURCE: https://github.com/${{ github.repository }}
+      TAG: ${{ github.ref_name }}
     steps:
       - uses: actions/checkout@v4
         with:
